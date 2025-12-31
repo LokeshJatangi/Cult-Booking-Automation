@@ -2,6 +2,10 @@
 
 A Python-based automation tool using [Playwright](https://playwright.dev/python/) to automate class bookings on [Cult.fit](https://www.cult.fit/).
 
+> [!CAUTION]
+> **DEPRECATED**: This project is no longer maintained.
+> Cult.fit has implemented platform restrictions that force final booking confirmation to be done via their mobile app. While the automation strategy here is valid, the web flow is often blocked at the final step.
+
 ## ⚠️ Important Note
 **Status**: Partial Success / Deprecated.
 While this tool successfully automates the entire flow (Login -> Center Selection -> Date Selection -> Class Selection -> Confirmation Click), Cult.fit often restricts the final booking confirmation step to their **Mobile App**. You may encounter a popup saying "Complete your booking on the cult app!" at the final step.
@@ -26,14 +30,12 @@ While this tool successfully automates the entire flow (Login -> Center Selectio
 
 2.  **Install dependencies**:
     ```bash
-    pip install -r requirements.txt
-    # OR using uv
     uv sync
     ```
 
 3.  **Install Playwright browsers**:
     ```bash
-    playwright install chromium
+    uv run playwright install chromium
     ```
 
 ## Usage
@@ -41,26 +43,26 @@ While this tool successfully automates the entire flow (Login -> Center Selectio
 ### 1. First Run: Login
 Run with the `--login` flag to open a headed browser, enter your phone number and OTP manually. The session will be saved automatically.
 ```bash
-python main.py --login
+uv run main.py --login
 ```
 *Wait for the login to complete, then press Ctrl+C to exit and save the session.*
 
 ### 2. Schedule a Booking
 Once logged in, run the script to book a class.
 
-**Default (07:00 AM at Cult Basavanagudi):**
+**Default (07:00 AM at Cult Whitefield):**
 ```bash
-python main.py
+uv run main.py
 ```
 
 **Custom Time:**
 ```bash
-python main.py --time "07:00 PM"
+uv run main.py --time "07:00 PM"
 ```
 
 **Custom Center:**
 ```bash
-python main.py --center "Indiranagar 100ft Road"
+uv run main.py --center "Indiranagar 100ft Road"
 ```
 
 ## Troubleshooting
@@ -87,3 +89,6 @@ To run this script automatically every day at **10:00 PM** (likely when slots op
 
 ## License
 MIT
+
+## Credits
+Built with **Antigravity** and **Gemini 3** models.

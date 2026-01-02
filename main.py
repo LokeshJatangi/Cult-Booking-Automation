@@ -10,7 +10,7 @@ def main():
     parser = argparse.ArgumentParser(description="Cult.fit Booking Automation")
     parser.add_argument("--headless", action="store_true", help="Run in headless mode")
     parser.add_argument("--login", action="store_true", help="Run in login mode to capture session")
-    parser.add_argument("--center", type=str, default="Cult Basavanagudi DV Gundappa Rd", help="Center name to book")
+    parser.add_argument("--center", type=str, default="Cult Whitefield", help="Center name to book")
     parser.add_argument("--time", type=str, default="07:00 AM", help="Class time to book (e.g., '07:00 AM')")
     args = parser.parse_args()
 

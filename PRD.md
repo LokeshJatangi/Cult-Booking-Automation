@@ -18,7 +18,7 @@ Booking popular classes on Cult.fit is competitive, with slots opening at 10 PM 
 ### 4.1 Core Booking Flow
 1.  **Center Selection**:
     *   Navigate to `https://www.cult.fit/cult/classbooking?pageFrom=cultCLP&pageType=classbooking`.
-    *   Search for "Cult Basavanagudi DV Gundappa Rd".
+    *   Search for "Cult Whitefield".
     *   Select the correct center from the dropdown/list.
 2.  **Date Selection**:
     *   Identify the date 4 days from today.

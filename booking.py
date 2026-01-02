@@ -258,20 +258,20 @@ def perform_booking(page: Page, center_name: str, target_time: str = "07:00 AM")
         # Check if the "App" popup is present
         try:
             if page.get_by_text("Complete your booking on the cult app").is_visible():
-                 print("Detected 'App Booking' popup. Attempting to close it...")
-                 # Look for close button (usually an X icon)
-                 # Common selectors: .close, button.close, [aria-label='Close'], or svg inside a button in the modal
-                 close_btn = page.locator(".close, .close-icon, button[aria-label='Close'], .modal-close").first
-                 if close_btn.is_visible():
-                     close_btn.click()
-                     print("Closed overlapping popup.")
-                     time.sleep(2)
-                 else:
-                     # Try finding an 'X' text or generic icon
-                     print("Specific close button not found. Searching for generic close icons...")
-                     # Use a short timeout here so we don't wait 30s
-                     page.locator("svg[data-testid*='close'], img[alt*='close']").first.click(timeout=3000)
-                     time.sleep(2)
+             print("Detected 'App Booking' popup. Proceed to book in app...")
+             # We do not close the popup as it is the intended flow now
+             
+        # Fallback closure logic if it was a DIFFERENT popup, but for now we assume if that text is there, we are done/blocked.
+        # If we wanted to support other popups we would separate the checks. 
+        # For this specific request: "update the log to book in app".
+
+        
+        # Common selectors: .close, button.close, [aria-label='Close'], or svg inside a button in the modal
+            # close_btn = page.locator(".close, .close-icon, button[aria-label='Close'], .modal-close").first
+            # if close_btn.is_visible():
+            #     close_btn.click()
+            #     print("Closed overlapping popup.")
+            #     time.sleep(2)
         except Exception as e:
             print(f"[WARNING] Could not close popup (ignoring and proceeding to force click): {e}")
 

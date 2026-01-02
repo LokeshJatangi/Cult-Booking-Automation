@@ -10,6 +10,10 @@ A Python-based automation tool using [Playwright](https://playwright.dev/python/
 **Status**: Partial Success / Deprecated.
 While this tool successfully automates the entire flow (Login -> Center Selection -> Date Selection -> Class Selection -> Confirmation Click), Cult.fit often restricts the final booking confirmation step to their **Mobile App**. You may encounter a popup saying "Complete your booking on the cult app!" at the final step.
 
+## 🎥 Demo: How I Automate Prime Time Cult.fit Bookings (Never Miss a Slot)
+
+[![Watch the video](https://img.youtube.com/vi/rNvkW1-Taf0/0.jpg)](https://youtu.be/rNvkW1-Taf0)
+
 ## Features
 *   **Persistent Sessions**: Logs in once and saves the browser state (cookies/local storage) to `./user_data`, avoiding repeated OTP logins.
 *   **Robust Selectors**: Handles dynamic class names and complex DOM structures.
